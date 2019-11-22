@@ -25,6 +25,8 @@
 
 ### A. ERD
 
+![ERD](ERD.png)
+
 
 
 ### B. Data Base
