@@ -43,7 +43,27 @@
 
 ## 일자별 업무 진행
 
-|       | 병철                                                | 수진                                                         |
-| ----- | --------------------------------------------------- | ------------------------------------------------------------ |
-| 11.21 | Youtube 영화 다시보기 정보 크롤링                   | naver Series 에서 영화 다시보기 정보 (가격) 크롤링           |
-| 11.22 | Youtube 영화 다시보기 정보(제목, 링크, 가격) 크롤링 | naver Series 에서 영화 다시보기 정보 (제목, 링크) 크롤링, <br />[영진위](http://www.kobis.or.kr/kobisopenapi/homepg/main/main.do) 에서 영화정보 크롤링 |
+|       | 병철                                                         | 수진                                                         |
+| ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 11.21 | Youtube 영화 다시보기 정보 크롤링                            | naver Series 에서 영화 다시보기 정보 (가격) 크롤링           |
+| 11.22 | Youtube 영화 다시보기 정보(제목, 링크, 가격) 크롤링<br />Model 빌드(ERD로 표현) <br />DRF 구성 | naver Series 에서 영화 다시보기 정보 (제목, 링크) 크롤링, <br />영진위에서 [영화정보 크롤링](#영화정보-크롤링) |
+
+
+
+## 극복
+
+
+
+### 영화정보 크롤링
+
+[영진위](http://www.kobis.or.kr/kobisopenapi/homepg/main/main.do)에서 지금부터 52주간의 영화 이름을 받아오는중, 
+
+dictionary를 json으로 저장하는 과정에서 인코딩 문제가 발생.
+
+```python
+with open('movies_name.json', 'w', encoding='UTF-8') as fp:
+    json.dump(movies_name, fp, ensure_ascii=False)
+```
+
+`encoding='UTF-8'` , `ensure_ascii=False`  추가로 해결. 
+
