@@ -22,8 +22,10 @@ class Movie(models.Model):
     userRating = models.FloatField()
     description = models.TextField()
     genres = models.ManyToManyField(Genre, related_name='movies')
-    actors = models.ManyToManyField(Actor, related_name='movies')
-    directors = models.ManyToManyField(Director, related_name='movies')
+    
+    # 일단 삭제 후 다시 시도
+    # actors = models.ManyToManyField(Actor, related_name='movies')
+    # directors = models.ManyToManyField(Director, related_name='movies')
 
 class Rating(models.Model):
     content = models.TextField()
