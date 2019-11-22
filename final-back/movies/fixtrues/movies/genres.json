@@ -194,5 +194,12 @@
         "fields": {
             "genreNm": "영화패러디포스터"
         }
+    },
+    {
+        "pk": 29,
+        "model": "movies.genre",
+        "fields": {
+            "genreNm": "멜로/로맨스"
+        }
     }
 ]
