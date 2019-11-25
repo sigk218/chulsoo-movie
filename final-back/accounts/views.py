@@ -4,23 +4,28 @@ from .serializers import UserSerializer
 from rest_framework.decorators import api_view
 from .models import User
 from rest_framework.response import Response
+from django.views.decorators.http import require_http_methods
+from django.http import JsonResponse
+from .forms import CustomUserCreationForm
+from django.core import serializers
 
 # Create your views here.
-@api_view(['GET', 'POST'])
+@require_http_methods(['GET', 'POST'])
 def users(request):
     if request.method == 'GET':
         users = User.objects.all()
-        serializer = UserSerializer(users, many=True)
-        return Response(serializer.data)
-        
+        serializer = serializers.serialize('json', users)
+        return JsonResponse(serializer, safe=False)
 # 여기를 분리해줘야돼!! 회원가입은 따로!
     elif request.method == 'POST':
-        serializer = UserSerializer(data=request.POST)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-    return Response(status=400)
-
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            serializers = serializers.serialize('json', form)
+            return JsonResponse(serializer, safe=False)
+    return JsonResponse({
+        'message': 400
+    })
 
 @api_view(['GET', 'DELETE'])
 def detail(request, user_pk):
