@@ -36,4 +36,7 @@ def detail(request, user_pk):
                 'message': f'유저 {username}이 정상적으로 삭제되었습니다.'
             })
     return Response(status=400)
+
+
+
         
