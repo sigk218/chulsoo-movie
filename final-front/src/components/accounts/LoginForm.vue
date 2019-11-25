@@ -1,5 +1,4 @@
 <template>
-  <!-- <v-container> -->
     <form>
       <v-text-field
         v-model="name"
@@ -33,13 +32,12 @@
       <v-btn class="mr-4" @click="login">Login</v-btn>
       <v-btn @click="clear">clear</v-btn>
     </form>
-  <!-- </v-container> -->
 </template>
 
 <script>
   import { validationMixin } from 'vuelidate'
   import { required, maxLength, email } from 'vuelidate/lib/validators'
-  import router from '../router'
+  import router from '@/router'
   import axios from 'axios'
 
   export default {
@@ -56,7 +54,6 @@
         },
       },
     },
-
     data: () => ({
       name: '',
       email: '',
