@@ -1,22 +1,17 @@
 <template>
-    <form>
+<div>
+   <v-card-text>
+    <v-form>
       <v-text-field
         v-model="name"
         :error-messages="nameErrors"
-        :counter="10"
+        :counter="30"
         label="Name"
         required
         @input="$v.name.$touch()"
         @blur="$v.name.$touch()"
       ></v-text-field>
-      <!-- <v-text-field
-        v-model="email"
-        :error-messages="emailErrors"
-        label="E-mail"
-        required
-        @input="$v.email.$touch()"
-        @blur="$v.email.$touch()"
-      ></v-text-field> -->
+
       <v-text-field
             v-model="password"
             :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
@@ -29,9 +24,15 @@
             @click:append="show1 = !show1"
           ></v-text-field>
 
-      <v-btn class="mr-4" @click="login">Login</v-btn>
+    </v-form>
+    </v-card-text>
+    <v-card-actions>
+      <v-spacer></v-spacer>
+      <v-btn color="primary" @click="login">Login</v-btn>
       <v-btn @click="clear">clear</v-btn>
-    </form>
+
+    </v-card-actions>
+</div>
 </template>
 
 <script>
@@ -45,7 +46,7 @@
     mixins: [validationMixin],
 
     validations: {
-      name: { required, maxLength: maxLength(10) },
+      name: { required, maxLength: maxLength(30) },
       email: { required, email },
       select: { required },
       checkbox: {
