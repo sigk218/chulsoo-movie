@@ -201,5 +201,54 @@
         "fields": {
             "genreNm": "멜로/로맨스"
         }
+    },
+    {
+        "pk": 30,
+        "model": "movies.genre",
+        "fields": {
+            "genreNm": "한국"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "movies.genre",
+        "fields": {
+            "genreNm": "그리스"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "movies.genre",
+        "fields": {
+            "genreNm": "영국"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "movies.genre",
+        "fields": {
+            "genreNm": "인도"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "movies.genre",
+        "fields": {
+            "genreNm": "스페인"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "movies.genre",
+        "fields": {
+            "genreNm": "칠레"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "movies.genre",
+        "fields": {
+            "genreNm": "공연실황"
+        }
     }
 ]

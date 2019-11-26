@@ -1,0 +1,1528 @@
+[
+    {
+        "pk": "1980",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "정지영"
+        }
+    },
+    {
+        "pk": "63313",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "리건"
+        }
+    },
+    {
+        "pk": "48456",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "김도영"
+        }
+    },
+    {
+        "pk": "360516",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "팀 밀러"
+        }
+    },
+    {
+        "pk": "329112",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "임대형"
+        }
+    },
+    {
+        "pk": "37393",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "신카이 마코토"
+        }
+    },
+    {
+        "pk": "7264",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "릭 로먼 워"
+        }
+    },
+    {
+        "pk": "242",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "크리스 벅"
+        }
+    },
+    {
+        "pk": "206044",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "제니퍼 리"
+        }
+    },
+    {
+        "pk": "1024",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "마틴 스코세이지"
+        }
+    },
+    {
+        "pk": "61053",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "송창용"
+        }
+    },
+    {
+        "pk": "213181",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "그렉 티어난"
+        }
+    },
+    {
+        "pk": "47099",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "콘래드 버논"
+        }
+    },
+    {
+        "pk": "295230",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "마이크 플래너건"
+        }
+    },
+    {
+        "pk": "168176",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "요아킴 뢰닝"
+        }
+    },
+    {
+        "pk": "2173",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "토드 필립스"
+        }
+    },
+    {
+        "pk": "200891",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "김한결"
+        }
+    },
+    {
+        "pk": "46480",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "박용집"
+        }
+    },
+    {
+        "pk": "423270",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "용수"
+        }
+    },
+    {
+        "pk": "1904",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이안"
+        }
+    },
+    {
+        "pk": "431196",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "장적사"
+        }
+    },
+    {
+        "pk": "171400",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "톰 하퍼"
+        }
+    },
+    {
+        "pk": "103545",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "전계수"
+        }
+    },
+    {
+        "pk": "118864",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "손용호"
+        }
+    },
+    {
+        "pk": "2869",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "제임스 그레이"
+        }
+    },
+    {
+        "pk": "167059",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "권오광"
+        }
+    },
+    {
+        "pk": "315",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "대니 보일"
+        }
+    },
+    {
+        "pk": "47384",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이계벽"
+        }
+    },
+    {
+        "pk": "355328",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "최신규"
+        }
+    },
+    {
+        "pk": "329476",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "김진철"
+        }
+    },
+    {
+        "pk": "9563",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "안드레스 무시에티"
+        }
+    },
+    {
+        "pk": "299854",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "김보라"
+        }
+    },
+    {
+        "pk": "63575",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이상근"
+        }
+    },
+    {
+        "pk": "199248",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "애드리언 그런버그"
+        }
+    },
+    {
+        "pk": "432479",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "바실리 로벤스키"
+        }
+    },
+    {
+        "pk": "172686",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "토르비욘 크리스토퍼센"
+        }
+    },
+    {
+        "pk": "379788",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "앤더스 마테센"
+        }
+    },
+    {
+        "pk": "135397",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "데이비드 미쇼"
+        }
+    },
+    {
+        "pk": "430681",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "한승우"
+        }
+    },
+    {
+        "pk": "1981",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "정지우"
+        }
+    },
+    {
+        "pk": "791",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "존 파브로"
+        }
+    },
+    {
+        "pk": "43436",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "조철현"
+        }
+    },
+    {
+        "pk": "3010",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "가이 리치"
+        }
+    },
+    {
+        "pk": "284769",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "존 왓츠"
+        }
+    },
+    {
+        "pk": "140359",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "홍성호"
+        }
+    },
+    {
+        "pk": "425122",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "나가오카 치카"
+        }
+    },
+    {
+        "pk": "130085",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "조나단 레빈"
+        }
+    },
+    {
+        "pk": "167128",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "조시 쿨리"
+        }
+    },
+    {
+        "pk": "9479",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "봉준호"
+        }
+    },
+    {
+        "pk": "427828",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "로버트 페르난데스"
+        }
+    },
+    {
+        "pk": "96338",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "마이클 도허티"
+        }
+    },
+    {
+        "pk": "380406",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이원태"
+        }
+    },
+    {
+        "pk": "40338",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "유선동"
+        }
+    },
+    {
+        "pk": "6942",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "안소니 루소"
+        }
+    },
+    {
+        "pk": "6943",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "조 루소"
+        }
+    },
+    {
+        "pk": "429240",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "찬드라세카란"
+        }
+    },
+    {
+        "pk": "426810",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이호경"
+        }
+    },
+    {
+        "pk": "8283",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "장규성"
+        }
+    },
+    {
+        "pk": "264590",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "조던 필"
+        }
+    },
+    {
+        "pk": "714",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "짐 자무쉬"
+        }
+    },
+    {
+        "pk": "1543",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "팀 버튼"
+        }
+    },
+    {
+        "pk": "113377",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "애너 보든"
+        }
+    },
+    {
+        "pk": "92669",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "라이언 플렉"
+        }
+    },
+    {
+        "pk": "374535",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "프랭키 첸"
+        }
+    },
+    {
+        "pk": "76809",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이정범"
+        }
+    },
+    {
+        "pk": "301448",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "김지혜"
+        }
+    },
+    {
+        "pk": "101379",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "워시 웨스트모어랜드"
+        }
+    },
+    {
+        "pk": "414149",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "구스타브 몰러"
+        }
+    },
+    {
+        "pk": "76754",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이수진"
+        }
+    },
+    {
+        "pk": "4694",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "채드 스타헬스키"
+        }
+    },
+    {
+        "pk": "181119",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "게리 도버먼"
+        }
+    },
+    {
+        "pk": "43013",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "강윤성"
+        }
+    },
+    {
+        "pk": "131568",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "원종식"
+        }
+    },
+    {
+        "pk": "7768",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "닐 마샬"
+        }
+    },
+    {
+        "pk": "46666",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "김윤석"
+        }
+    },
+    {
+        "pk": "377898",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "데이비드 F. 샌드버그"
+        }
+    },
+    {
+        "pk": "350074",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "케빈 콜쉬"
+        }
+    },
+    {
+        "pk": "304874",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "데니스 위드미어"
+        }
+    },
+    {
+        "pk": "90133",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "저스틴 밸도니"
+        }
+    },
+    {
+        "pk": "410516",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "엄유나"
+        }
+    },
+    {
+        "pk": "40228",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "강효진"
+        }
+    },
+    {
+        "pk": "252799",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "필 존스턴"
+        }
+    },
+    {
+        "pk": "171771",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "리치 무어"
+        }
+    },
+    {
+        "pk": "424356",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "유재운"
+        }
+    },
+    {
+        "pk": "51993",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "제임스 완"
+        }
+    },
+    {
+        "pk": "2134",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "브라이언 싱어"
+        }
+    },
+    {
+        "pk": "2049",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "피터 패럴리"
+        }
+    },
+    {
+        "pk": "360227",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "트래비스 나이트"
+        }
+    },
+    {
+        "pk": "136603",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "김병우"
+        }
+    },
+    {
+        "pk": "363418",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "타치카와 유즈루"
+        }
+    },
+    {
+        "pk": "9435",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "앤디 서키스"
+        }
+    },
+    {
+        "pk": "300101",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "김태균"
+        }
+    },
+    {
+        "pk": "57713",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "김광식"
+        }
+    },
+    {
+        "pk": "39813",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "마크 포스터"
+        }
+    },
+    {
+        "pk": "395443",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이종석"
+        }
+    },
+    {
+        "pk": "143134",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "존 스티븐슨"
+        }
+    },
+    {
+        "pk": "6325",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "박희곤"
+        }
+    },
+    {
+        "pk": "109879",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "조원희"
+        }
+    },
+    {
+        "pk": "295523",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "코린 하디"
+        }
+    },
+    {
+        "pk": "44379",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이언희"
+        }
+    },
+    {
+        "pk": "137137",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "후안 안토니오 바요나"
+        }
+    },
+    {
+        "pk": "469",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "게리 로스"
+        }
+    },
+    {
+        "pk": "40150",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이해영"
+        }
+    },
+    {
+        "pk": "305845",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "스콧 스피어"
+        }
+    },
+    {
+        "pk": "156921",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이경섭"
+        }
+    },
+    {
+        "pk": "22053",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "에비 콘"
+        }
+    },
+    {
+        "pk": "22054",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "마크 실버스테인"
+        }
+    },
+    {
+        "pk": "621",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "제임스 카메론"
+        }
+    },
+    {
+        "pk": "408379",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "잔 울카이"
+        }
+    },
+    {
+        "pk": "419740",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "카말 반살"
+        }
+    },
+    {
+        "pk": "66284",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "홍창표"
+        }
+    },
+    {
+        "pk": "1934",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "임순례"
+        }
+    },
+    {
+        "pk": "159199",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "토미 위르콜라"
+        }
+    },
+    {
+        "pk": "518",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "기예르모 델 토로"
+        }
+    },
+    {
+        "pk": "4232",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "히로키 류이치"
+        }
+    },
+    {
+        "pk": "56481",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "프란시스 로렌스"
+        }
+    },
+    {
+        "pk": "626",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "제임스 폴리"
+        }
+    },
+    {
+        "pk": "63332",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "타이카 와이티티"
+        }
+    },
+    {
+        "pk": "204205",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "장유정"
+        }
+    },
+    {
+        "pk": "422571",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "헝추슈안"
+        }
+    },
+    {
+        "pk": "1292",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "레니 할린"
+        }
+    },
+    {
+        "pk": "417922",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "우시지마 신이치로"
+        }
+    },
+    {
+        "pk": "12447",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "마이클 스피어리그"
+        }
+    },
+    {
+        "pk": "12448",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "피터 스피어리그"
+        }
+    },
+    {
+        "pk": "376705",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "텐 샤오펑"
+        }
+    },
+    {
+        "pk": "1266",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "쿠엔틴 타란티노"
+        }
+    },
+    {
+        "pk": "6840",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "딘 데블린"
+        }
+    },
+    {
+        "pk": "6405",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이준익"
+        }
+    },
+    {
+        "pk": "1063",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "마이클 베이"
+        }
+    },
+    {
+        "pk": "305351",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "저스틴 프라이스"
+        }
+    },
+    {
+        "pk": "177939",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "댄 스캔론"
+        }
+    },
+    {
+        "pk": "273392",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "켈리 프레몬"
+        }
+    },
+    {
+        "pk": "72168",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "정병길"
+        }
+    },
+    {
+        "pk": "349098",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "정량"
+        }
+    },
+    {
+        "pk": "427425",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "김재희"
+        }
+    },
+    {
+        "pk": "73583",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "김태윤"
+        }
+    },
+    {
+        "pk": "5989",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "배종"
+        }
+    },
+    {
+        "pk": "311040",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "김성훈"
+        }
+    },
+    {
+        "pk": "394628",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "알베르토 로드리게즈"
+        }
+    },
+    {
+        "pk": "394627",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "나초 라 까사"
+        }
+    },
+    {
+        "pk": "4908",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "D.J. 카루소"
+        }
+    },
+    {
+        "pk": "427667",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "실크 비스티니"
+        }
+    },
+    {
+        "pk": "368544",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "남대중"
+        }
+    },
+    {
+        "pk": "427776",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "히라야마 미호"
+        }
+    },
+    {
+        "pk": "47201",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "고정욱"
+        }
+    },
+    {
+        "pk": "337268",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "아리 에스터"
+        }
+    },
+    {
+        "pk": "157641",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이병헌"
+        }
+    },
+    {
+        "pk": "6476",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이한"
+        }
+    },
+    {
+        "pk": "9489",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "로버트 로드리게즈"
+        }
+    },
+    {
+        "pk": "126962",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "크리스토퍼 랜던"
+        }
+    },
+    {
+        "pk": "55307",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이민재"
+        }
+    },
+    {
+        "pk": "7605",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "롭 마샬"
+        }
+    },
+    {
+        "pk": "6214",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "딘 데블로이스"
+        }
+    },
+    {
+        "pk": "61885",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "야마모토 야스이치로"
+        }
+    },
+    {
+        "pk": "157085",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "나가미네 타츠야"
+        }
+    },
+    {
+        "pk": "53594",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "허종호"
+        }
+    },
+    {
+        "pk": "91949",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이석근"
+        }
+    },
+    {
+        "pk": "10397",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "셰인 블랙"
+        }
+    },
+    {
+        "pk": "51988",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "리 워넬"
+        }
+    },
+    {
+        "pk": "92162",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "올 파커"
+        }
+    },
+    {
+        "pk": "11476",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "김용화"
+        }
+    },
+    {
+        "pk": "1813",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "변혁"
+        }
+    },
+    {
+        "pk": "418907",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "리양우"
+        }
+    },
+    {
+        "pk": "79025",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "윤종빈"
+        }
+    },
+    {
+        "pk": "122990",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "정범식"
+        }
+    },
+    {
+        "pk": "1495",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "스티븐 스필버그"
+        }
+    },
+    {
+        "pk": "87207",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "방수인"
+        }
+    },
+    {
+        "pk": "408280",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이장훈"
+        }
+    },
+    {
+        "pk": "405864",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "김지열"
+        }
+    },
+    {
+        "pk": "55772",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "추창민"
+        }
+    },
+    {
+        "pk": "89839",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "존 크래신스키"
+        }
+    },
+    {
+        "pk": "121183",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "루카 구아다니노"
+        }
+    },
+    {
+        "pk": "72202",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "황동혁"
+        }
+    },
+    {
+        "pk": "6421",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "매튜 본"
+        }
+    },
+    {
+        "pk": "163281",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "미키 타카히로"
+        }
+    },
+    {
+        "pk": "312116",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이시즈카 아츠코"
+        }
+    },
+    {
+        "pk": "162941",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "드니 빌뇌브"
+        }
+    },
+    {
+        "pk": "340460",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "캘런 브런커"
+        }
+    },
+    {
+        "pk": "68642",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "박인제"
+        }
+    },
+    {
+        "pk": "133861",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "문현성"
+        }
+    },
+    {
+        "pk": "424",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "F. 게리 그레이"
+        }
+    },
+    {
+        "pk": "1207",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "켈리 애스버리"
+        }
+    },
+    {
+        "pk": "149234",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이달"
+        }
+    },
+    {
+        "pk": "149236",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "고동우"
+        }
+    },
+    {
+        "pk": "1684",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "빌 콘돈"
+        }
+    },
+    {
+        "pk": "399151",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "홍주연"
+        }
+    },
+    {
+        "pk": "167451",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "홍현정"
+        }
+    },
+    {
+        "pk": "166261",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "타다 슌스케"
+        }
+    },
+    {
+        "pk": "6439",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "믹 잭슨"
+        }
+    },
+    {
+        "pk": "74537",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "스콧 데릭슨"
+        }
+    },
+    {
+        "pk": "380631",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이두환"
+        }
+    },
+    {
+        "pk": "228167",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "발레리아 사미엔토"
+        }
+    },
+    {
+        "pk": "79078",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "전인환"
+        }
+    },
+    {
+        "pk": "119714",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "백승화"
+        }
+    },
+    {
+        "pk": "3609",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "곽재용"
+        }
+    },
+    {
+        "pk": "144678",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "바이론 하워드"
+        }
+    },
+    {
+        "pk": "73205",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "이철하"
+        }
+    },
+    {
+        "pk": "2653",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "박흥식"
+        }
+    },
+    {
+        "pk": "336447",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "세딕 니콜라스 트로얀"
+        }
+    },
+    {
+        "pk": "227601",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "그레고리 플로킨"
+        }
+    },
+    {
+        "pk": "73262",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "최국희"
+        }
+    },
+    {
+        "pk": "92863",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "존 힐코트"
+        }
+    },
+    {
+        "pk": "6459",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "나카에 이사무"
+        }
+    },
+    {
+        "pk": "351495",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "해스래프 둘룰"
+        }
+    },
+    {
+        "pk": "429982",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "신윤호"
+        }
+    },
+    {
+        "pk": "166486",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "가렛 에반스"
+        }
+    },
+    {
+        "pk": "51764",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "김정훈"
+        }
+    },
+    {
+        "pk": "371586",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "알렉상드르 헤보얀"
+        }
+    },
+    {
+        "pk": "13125",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "베노이트 필립폰"
+        }
+    },
+    {
+        "pk": "322860",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "웨스 볼"
+        }
+    },
+    {
+        "pk": "364581",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "오오스기 요시히로"
+        }
+    },
+    {
+        "pk": "80177",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "린 사우더랜드"
+        }
+    },
+    {
+        "pk": "116915",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "자움 콜렛 세라"
+        }
+    },
+    {
+        "pk": "118470",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "닐 블롬캠프"
+        }
+    },
+    {
+        "pk": "149157",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "홍석재"
+        }
+    },
+    {
+        "pk": "67429",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "신한솔"
+        }
+    },
+    {
+        "pk": "179496",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "요네바야시 히로마사"
+        }
+    },
+    {
+        "pk": "294687",
+        "model": "movies.Director",
+        "fields": {
+            "peopleNm": "모튼 틸덤"
+        }
+    }
+]

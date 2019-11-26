@@ -46,9 +46,16 @@
 |       | 병철                                                         | 수진                                                         |
 | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 11.21 | Youtube 영화 다시보기 정보 크롤링                            | naver Series 에서 영화 다시보기 정보 (가격) 크롤링           |
+<<<<<<< HEAD
 | 11.22 | Youtube 영화 다시보기 정보(제목, 링크, 가격) 크롤링<br />Model 빌드(ERD로 표현) <br />DRF를 이용해 API 서버 만들기Create, Read, Delete<br /> | naver Series 에서 영화 다시보기 정보 (제목, 링크) 크롤링, <br />영진위에서 [영화정보 크롤링](#영화정보-크롤링)<br />Seed data인 ixtures/movies.json, genres.json 만들기\| 11.25 \| Login, Logout 기능 구현,<br />회원가입 기능 구현 실패,       \| [django 서버로 API요청](#django-서버로-API요청), 영화 리스트 응답 받아서 vue에 띄우기(`MovieList.vue`) \| |
 | 11.25 |                                                              | [django 서버로 API요청](#django-서버로-API요청), 영화 리스트 응답 받아서 vue에 띄우기(`MovieList.vue`) |
 | 11.26 |                                                              | Toolbar 만들기([md-icons 설치](#md-icons-설치))              |
+=======
+| 11.22 | Youtube 영화 다시보기 정보(제목, 링크, 가격) 크롤링<br />Model 빌드(ERD로 표현) <br />DRF를 이용해 API 서버 만들기Create, Read, Delete<br /> | naver Series 에서 영화 다시보기 정보 (제목, 링크) 크롤링, <br />영진위에서 [영화정보 크롤링](#영화정보-크롤링)<br />Seed data인 ixtures/movies.json, genres.json 만들기 |
+| 11.25 | Login, Logout 기능 구현,<br />회원가입 기능 구현 실패,       | [django 서버로 API요청](#django-서버로-API요청), 영화 리스트 응답 받아서 vue에 띄우기(`MovieList.vue`) |
+| 11.26 |                                                              | Toolbar 만들기([md-icons 설치](#md-icons-설치))<br />새로운 fixture(movie,genre,director,actor) 추가 |
+
+>>>>>>> master
 
 
 
@@ -113,8 +120,6 @@ axios.get(MOVIE_URL, options)
 => migrate 하면 해결됨.
 
 
-
-<<<<<<< HEAD
 ### NavigationDuplicated Error
 
 vue Router에서 현재페이지와 같은 페이지로 router.push를 하게 되면 콘솔창에 NavigationDuplicated Error가 발생한다. 
@@ -168,6 +173,7 @@ In `main.js`
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 ```
 
+<<<<<<< HEAD
 
 
 ### 유저정보 뽑아내기
@@ -176,3 +182,5 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
 npm install vue-jwt-decode
 ```
 
+=======
+>>>>>>> master
