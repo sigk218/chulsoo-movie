@@ -100,3 +100,12 @@ axios.get(MOVIE_URL, options)
 })
 ```
 
+
+
+### `bash` 창에서 no such table error 
+
+```bash
+'C:\Users\student\FINAL2\final-back\movies\fixtures\movies\genres.json': Could not load movies.Genre(pk=1): no such table: movies_genre
+```
+
+=> migrate 하면 해결됨.
