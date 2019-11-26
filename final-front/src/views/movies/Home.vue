@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-      <v-toolbar>
+      <v-app-bar absolute > 
       <v-icon v-model="platform">mdi-magnify</v-icon>  
       <v-toolbar-title>철수 MOVIE</v-toolbar-title>
       <v-spacer></v-spacer>
@@ -18,7 +18,7 @@
           <v-icon @click.native="show = !show">{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
         </v-btn>
       <!-- </template> -->
-    </v-toolbar>
+    </v-app-bar>
     <MovieList :movies="movies"/>
   </div>
 </template>
