@@ -47,8 +47,13 @@
 | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 11.21 | Youtube 영화 다시보기 정보 크롤링                            | naver Series 에서 영화 다시보기 정보 (가격) 크롤링           |
 | 11.22 | Youtube 영화 다시보기 정보(제목, 링크, 가격) 크롤링<br />Model 빌드(ERD로 표현) <br />DRF를 이용해 API 서버 만들기Create, Read, Delete<br /> | naver Series 에서 영화 다시보기 정보 (제목, 링크) 크롤링, <br />영진위에서 [영화정보 크롤링](#영화정보-크롤링)<br />Seed data인 ixtures/movies.json, genres.json 만들기 |
+<<<<<<< HEAD
 | 11.25 | Login, Logout 기능 구현,<br />회원가입 기능 구현 실패,       | [django 서버로 API요청](#django-서버로-API요청), 영화 리스트 응답 받아서 vue에 띄우기(`MovieList.vue`) |
 | 11.26 |                                                              |                                                              |
+=======
+| 11.25 |                                                              | [django 서버로 API요청](#django-서버로-API요청), 영화 리스트 응답 받아서 vue에 띄우기(`MovieList.vue`) |
+| 11.26 |                                                              | Toolbar 만들기([md-icons 설치](#md-icons-설치))              |
+>>>>>>> master
 
 
 
@@ -113,6 +118,7 @@ axios.get(MOVIE_URL, options)
 
 
 
+<<<<<<< HEAD
 ### NavigationDuplicated Error
 
 vue Router에서 현재페이지와 같은 페이지로 router.push를 하게 되면 콘솔창에 NavigationDuplicated Error가 발생한다. 
@@ -151,3 +157,19 @@ router.push({name: 'login'}).catch(err => {})
 
 
 
+=======
+### md-icons 설치
+
+In `bash`,
+
+```bash
+npm install material-design-icons-iconfont --save
+```
+
+In `main.js`
+
+```javascript
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+```
+
+>>>>>>> master
