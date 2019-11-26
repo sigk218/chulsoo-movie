@@ -1,5 +1,24 @@
 <template>
   <div class="home">
+      <v-toolbar>
+      <v-icon v-model="platform">mdi-magnify</v-icon>  
+      <v-toolbar-title>철수 MOVIE</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items>
+        <button class="ma-2">
+        <v-icon v-model="platform">mdi-magnify</v-icon>검색
+        </button>
+        <button class="ma-2">
+        <v-icon v-model="platform">mdi-heart</v-icon>보고싶어요
+        </button>
+      </v-toolbar-items>
+      <!-- <template v-if="$vuetify.breakpoint.smAndUp"> -->
+        <v-btn>
+          username
+          <v-icon @click.native="show = !show">{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+        </v-btn>
+      <!-- </template> -->
+    </v-toolbar>
     <MovieList :movies="movies"/>
   </div>
 </template>
@@ -19,6 +38,7 @@ export default {
     return {
       movies: [],
       genres: [],
+      show: false,
     }
   },
   mounted(){
@@ -38,3 +58,7 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+</style>

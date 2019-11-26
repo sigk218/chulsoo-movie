@@ -1,15 +1,18 @@
 <template>
 <div>
-  <h1>무비리스트입니다</h1>
-  {{ movies }}
+  <p>어쩌구 님이 좋아한 영화</p>
+  <v-container row>
+    <MovieListItem :movie="movie" v-for="movie in movies" :key="movie.id"/>
+  </v-container>
 </div>
 </template>
 
 <script>
+import MovieListItem from './MovieListItem.vue'
 export default {
   name: 'MovieList',
   components:{
-
+    MovieListItem,
   },
   props:{
     movies:{
