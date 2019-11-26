@@ -1,34 +1,39 @@
 <template>
-<v-card>
-    <v-img :src="movie.image">
-    </v-img>
-    <v-card-title primary-title>
-      <div>
-        <div class="headline">Top western road trips</div>
-        <span class="grey--text">1,000 miles of wonder</span>
-      </div>
-    </v-card-title>
-    <v-card-actions>
-      <v-btn flat>Share</v-btn>
-      <v-btn flat color="purple">Explore</v-btn>
-      <v-spacer></v-spacer>
-      <v-btn icon @click.native="show = !show">
-        <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
-      </v-btn>
-    </v-card-actions>
-    <v-slide-y-transition>
-      <v-card-text v-show="show">
-        I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
-      </v-card-text>
-    </v-slide-y-transition>
-</v-card>
+<div class="ma-3">
+  <a @click="movieSelected">
+   <v-hover v-slot:default="{ hover }">
+            <v-card
+              :elevation="hover ? 12 : 2"
+              :class="{ 'on-hover': hover }"
+            >
+              <v-img
+                :src="movie.image"
+                width="200px"
+                class="d-flex align-center"
+              >
+                <v-card-title class="d-flex justify-center">
+                        <v-icon
+                          :class="{ 'show-btns': hover }"
+                          x-large
+                        >
+                          mdi-play
+                        </v-icon>
+                </v-card-title>
+              </v-img>
+              
+            </v-card>
+          </v-hover>
+          </a>
+</div>
 </template>
 
 <script>
 // import MovieDetail from './MovieDetail'
+
 export default {
      data: () => ({
-      show: false
+      show: false,
+      transparent: 'rgba(255, 255, 255, 0)',
     }),
     name: 'MoveListItem',
     components: {
@@ -41,11 +46,23 @@ export default {
         }    
     },
     methods:{
-
+      movieSelected() {
+        this.$emit('selectedMovie', this.movie)
+      },
     }
 }
 </script>
 
 <style>
+.v-card {
+  transition: opacity .4s ease-in-out;
+}
 
+.v-card:not(.on-hover) {
+  opacity: 0.7;
+ }
+
+.show-btns {
+  color: rgba(255, 255, 255, 1) !important;
+}
 </style>
