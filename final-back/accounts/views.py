@@ -8,9 +8,11 @@ from django.views.decorators.http import require_http_methods
 from django.http import JsonResponse
 from .forms import CustomUserCreationForm
 from django.core import serializers
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 # Create your views here.
 @require_http_methods(['GET', 'POST'])
+@ensure_csrf_cookie
 def users(request):
     if request.method == 'GET':
         users = User.objects.all()
@@ -21,7 +23,7 @@ def users(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            serializers = serializers.serialize('json', form)
+            serializer = serializers.serialize('json', form)
             return JsonResponse(serializer, safe=False)
     return JsonResponse({
         'message': 400

@@ -1,37 +1,44 @@
 <template>
-  <form>
-    <v-text-field
-      v-model="name"
-      :error-messages="nameErrors"
-      :counter="10"
-      label="Name"
-      required
-      @input="$v.name.$touch()"
-      @blur="$v.name.$touch()"
-    ></v-text-field>
-    <v-text-field
-      v-model="email"
-      :error-messages="emailErrors"
-      label="E-mail"
-      required
-      @input="$v.email.$touch()"
-      @blur="$v.email.$touch()"
-    ></v-text-field>
-    <v-text-field
-      v-model="password"
-      :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-      :rules="[rules.required, rules.min]"
-      :type="show1 ? 'text' : 'password'"
-      name="input-10-1"
-      label="Password"
-      hint="At least 8 characters"
-      counter
-      @click:append="show1 = !show1"
-    ></v-text-field>
+<div>
+    <v-card-text>
+    <v-form>
+      <v-text-field
+        v-model="name"
+        :error-messages="nameErrors"
+        :counter="30"
+        label="Name"
+        required
+        @input="$v.name.$touch()"
+        @blur="$v.name.$touch()"
+      ></v-text-field>
+      <v-text-field
+        v-model="email"
+        :error-messages="emailErrors"
+        label="E-mail"
+        required
+        @input="$v.email.$touch()"
+        @blur="$v.email.$touch()"
+      ></v-text-field>
+      <v-text-field
+            v-model="password"
+            :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+            :rules="[rules.required, rules.min]"
+            :type="show1 ? 'text' : 'password'"
+            name="input-10-1"
+            label="Password"
+            hint="At least 8 characters"
+            counter
+            @click:append="show1 = !show1"
+          ></v-text-field>
+    </v-form>
+    </v-card-text>
+    <v-card-actions>
+      <v-spacer></v-spacer>
+      <v-btn color="primary" @click="SignUp">SignUp</v-btn>
+      <v-btn @click="clear">clear</v-btn>
 
-    <v-btn class="mr-4" @click="SignUp">Signup</v-btn>
-    <v-btn @click="clear">clear</v-btn>
-  </form>
+    </v-card-actions>
+</div>
 </template>
 
 <script>
@@ -41,11 +48,11 @@
   import axios from 'axios'
 
   export default {
-    name: 'SignUpForm',
+    name: 'LoginForm',
     mixins: [validationMixin],
 
     validations: {
-      name: { required, maxLength: maxLength(10) },
+      name: { required, maxLength: maxLength(30) },
       email: { required, email },
       select: { required },
       checkbox: {
@@ -53,6 +60,7 @@
           return val
         },
       },
+    },
     data: () => ({
       name: '',
       email: '',
@@ -72,8 +80,10 @@
           required: value => !!value || 'Required.',
           min: v => v.length >= 8 || 'Min 8 characters',
           emailMatch: () => ('The email and password you entered don\'t match'),
+      
     },
     }),
+
     computed: {
       nameErrors () {
         const errors = []
@@ -103,10 +113,10 @@
       },
       SignUp() {
 
-      axios.defaults.xsrfCookieName = 'XSRF-TOKEN'
-      axios.defaults.xsrfHeaderName = 'X-XSRF-TOKEN'
-
-      axios.post('http://localhost:8000/api-token-auth/', 
+      axios.defaults.xsrfCookieName = 'csrftoken'
+      axios.defaults.xsrfHeaderName = 'X-CSRFTOKEN'
+      
+      axios.post('http://127.0.0.1:8000/api/v1/accounts/', 
       {username: this.name,
       email: this.email,
       password: this.password})
@@ -120,7 +130,7 @@
         })
       }
     }
-  }
+  
   }
 </script>
 

@@ -1,11 +1,8 @@
 <template>
   <v-app>
     <v-container>
-    <router-link to="/">Home </router-link>
     <button v-if="loggedIn()" @click="logout">Logout</button>
     <div class="d-inline" v-else>
-    <router-link to="/login">Login </router-link>
-    <router-link to="/signup">SignUp</router-link>
     </div>
     <router-view />
     </v-container>
@@ -32,7 +29,7 @@ export default {
     loggedIn() {
       this.$session.start()
       if (!this.$session.has('jwt')) {
-        // router.push({name: 'login'}, () => {});
+        router.push({name: 'login'}, () => {})
         return false
       } else {
         return true
