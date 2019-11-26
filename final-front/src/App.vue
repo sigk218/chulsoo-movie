@@ -4,8 +4,9 @@
     <button v-if="loggedIn()" @click="logout">Logout</button>
     <div class="d-inline" v-else>
     </div>
-    <router-view />
+    
     </v-container>
+    <router-view />
   </v-app>
 </template>
 
@@ -21,7 +22,6 @@ export default {
   methods: {
     logout() {
       this.$session.destroy()
-
       // NavigationDuplicated 를 핸들링 하기 위해 () => {} 를 추가함.
       // 위의 에러는 현재 페이지와 push하려는 페이지가 같을 때 발생하는 에러.
       router.push({name: 'login'}, () => {})

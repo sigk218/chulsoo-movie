@@ -1,5 +1,8 @@
 <template>
 <v-content>
+  <v-layout align-center justify-center>
+    <h1 class="font-weight-thin display-4" style="position: absolute; margin-top: 100px">ChulSoo Movie</h1>
+    </v-layout>
       <v-container
         fluid
         fill-height
@@ -69,7 +72,6 @@
       this.loggedIn()
     }
     }
-  
 </script>
 
 <style>
