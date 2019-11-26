@@ -48,6 +48,7 @@
 | 11.21 | Youtube 영화 다시보기 정보 크롤링                            | naver Series 에서 영화 다시보기 정보 (가격) 크롤링           |
 | 11.22 | Youtube 영화 다시보기 정보(제목, 링크, 가격) 크롤링<br />Model 빌드(ERD로 표현) <br />DRF를 이용해 API 서버 만들기Create, Read, Delete<br /> | naver Series 에서 영화 다시보기 정보 (제목, 링크) 크롤링, <br />영진위에서 [영화정보 크롤링](#영화정보-크롤링)<br />Seed data인 ixtures/movies.json, genres.json 만들기 |
 | 11.25 |                                                              | [django 서버로 API요청](#django-서버로-API요청), 영화 리스트 응답 받아서 vue에 띄우기(`MovieList.vue`) |
+| 11.26 |                                                              | Toolbar 만들기([md-icons 설치](#md-icons-설치))              |
 
 
 
@@ -109,3 +110,20 @@ axios.get(MOVIE_URL, options)
 ```
 
 => migrate 하면 해결됨.
+
+
+
+### md-icons 설치
+
+In `bash`,
+
+```bash
+npm install material-design-icons-iconfont --save
+```
+
+In `main.js`
+
+```javascript
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+```
+

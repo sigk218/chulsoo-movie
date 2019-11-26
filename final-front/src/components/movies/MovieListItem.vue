@@ -22,12 +22,6 @@
       </v-card-text>
     </v-slide-y-transition>
 </v-card>
-    <!-- <div>
-        <img :src="movie.image" alt="moive.name">
-        <v-btn icon @click.native="show = !show">
-            <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
-        </v-btn>
-    </div> -->
 </template>
 
 <script>
