@@ -108,12 +108,13 @@
       login() {
       axios.post('http://localhost:8000/api-token-auth/', {username: this.name, password: this.password})
       .then(res => {
-        console.log(res.data.token)
+        console.log(res)
         // start는 session id를 초기화 한다는 메소드임
         this.$session.start()
         this.$session.set('jwt', res.data.token)
         // this.$router == router
         router.push('/')
+        console.log(this.$session)
       })
     }
     }

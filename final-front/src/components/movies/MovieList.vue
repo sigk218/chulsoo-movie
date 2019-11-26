@@ -1,8 +1,9 @@
 <template>
-<div>
-  <p>어쩌구 님이 좋아한 영화</p>
-  <v-container row>
-    <MovieListItem :movie="movie" v-for="movie in movies" :key="movie.id"/>
+<div class="mt-10">
+  <v-container>
+    <v-row>
+    <MovieListItem :movie="movie" v-for="movie in movies" @selectedMovie="movieSelected" :key="movie.id"/>
+    </v-row>
   </v-container>
 </div>
 </template>
@@ -18,6 +19,14 @@ export default {
     movies:{
       type: Array,
       required: true,
+    },
+    user: {
+      type: Object,
+    }
+  },
+  methods: {
+    movieSelected(data) {
+      this.$emit('selectedMovie', data)
     }
   }
 }

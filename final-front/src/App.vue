@@ -1,10 +1,6 @@
 <template>
   <v-app>
     <v-container>
-    <button v-if="loggedIn()" @click="logout">Logout</button>
-    <div class="d-inline" v-else>
-    </div>
-    
     </v-container>
     <router-view />
   </v-app>
