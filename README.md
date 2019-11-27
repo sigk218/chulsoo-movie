@@ -181,3 +181,9 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
 npm install vue-jwt-decode
 ```
 
+
+
+```
+pip install django-rest-auth
+```
+
