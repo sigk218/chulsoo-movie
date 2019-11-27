@@ -167,20 +167,19 @@ def rating_detail(request, rating_pk):
     return Response(status=400)
 
 
-@api_view(['POST', 'DELETE'])
+@api_view(['POST'])
 def like_movie(request, movie_pk, user_pk):
     movie = get_object_or_404(Movie, pk=movie_pk)
-    user = get_object_or_404(get_user_model, pk=user_pk)
-
+    user = get_object_or_404(get_user_model(), pk=user_pk)
     if request.method == 'POST':
-        user.like_movie.add(movie)
-        return Response({
-            'message': f'{user.username}님 영화{movie.title} 좋아요 완료'
-        })
-    elif request.method == 'DELETE':
-        user.like_movie.remove(movie)
-        
-        return Response({
-            'message': f'{user.username}님 영화{movie.title} 좋아요 취소'
-        })
+        if not user.like_movie.filter(pk=movie_pk):
+            user.like_movie.add(movie)
+            return Response({
+                'message': f'{user.username}님 영화{movie.title} 좋아요 완료'
+            })
+        else:
+            user.like_movie.remove(movie)
+            return Response({
+                'message': f'{user.username}님 영화{movie.title} 좋아요 취소'
+            })
     return Response(status=400)
