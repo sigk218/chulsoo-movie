@@ -2,11 +2,12 @@
 <div>
     <v-card-text>
     <v-form>
+      <h3>Required</h3>
       <v-text-field
         v-model="name"
         :error-messages="nameErrors"
         :counter="30"
-        label="Name"
+        label="username(required)"
         required
         @input="$v.name.$touch()"
         @blur="$v.name.$touch()"
@@ -14,7 +15,7 @@
       <v-text-field
         v-model="email"
         :error-messages="emailErrors"
-        label="E-mail"
+        label="E-mail(required)"
         required
         @input="$v.email.$touch()"
         @blur="$v.email.$touch()"
@@ -25,11 +26,30 @@
             :rules="[rules.required, rules.min]"
             :type="show1 ? 'text' : 'password'"
             name="input-10-1"
-            label="Password"
+            label="Password(required)"
             hint="At least 8 characters"
             counter
             @click:append="show1 = !show1"
           ></v-text-field>
+
+        <h3>Options</h3>
+        <v-text-field
+        v-model="firstname"
+        :error-messages="nameErrors"
+        :counter="20"
+        label="First Name"
+        @input="$v.names.$touch()"
+        @blur="$v.names.$touch()"
+      ></v-text-field>
+      
+      <v-text-field
+        v-model="lastname"
+        :error-messages="nameErrors"
+        :counter="20"
+        label="Last Name"
+        @input="$v.names.$touch()"
+        @blur="$v.names.$touch()"
+      ></v-text-field>
     </v-form>
     </v-card-text>
     <v-card-actions>
@@ -55,6 +75,7 @@
       name: { required, maxLength: maxLength(30) },
       email: { required, email },
       select: { required },
+      names: {maxLength: maxLength(20)},
       checkbox: {
         checked (val) {
           return val
@@ -64,6 +85,8 @@
     data: () => ({
       name: '',
       email: '',
+      firstname: '',
+      lastname: '',
       select: null,
       items: [
         'Item 1',
@@ -115,15 +138,28 @@
 
       axios.defaults.xsrfCookieName = 'csrftoken'
       axios.defaults.xsrfHeaderName = 'X-CSRFTOKEN'
-      
-      axios.post('http://127.0.0.1:8000/api/v1/accounts/', 
+      if (!this.firstname) {
+        this.firstname = 'none'
+      }
+      if (!this.lastname) {
+        this.lastname = 'none'
+      }
+
+      axios.post('http://127.0.0.1:8000/rest-auth/registration/', 
       {username: this.name,
       email: this.email,
-      password: this.password})
+      password1: this.password,
+      password2: this.password,
+      first_name: this.firstname,
+      last_name: this.lastname,})
       .then(res => {
         console.log('회원가입성공')
         console.log(res)
+        const token = res.data.token
+        this.$session.start()
+        this.$session.set('jwt', token)
         router.push('/')
+        alert(`환영합니다! ${this.name}님`)
       }).catch(err => {
         console.log('회원가입실패')
         console.log(err)
