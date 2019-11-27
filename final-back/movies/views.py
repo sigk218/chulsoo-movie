@@ -5,8 +5,6 @@ from .models import Actor, Director, Genre, Movie, Rating
 from .serializers import ActorSerializer, DirectorSerializer, GenreSerializer, MovieSerializer, RatingSerializer
 from django.contrib.auth import get_user_model
 from django.db.models import Q
-# from IPython import embed
-
 
 # Create your views here.
 @api_view(['GET', 'POST'])
@@ -16,6 +14,9 @@ def movies(request):
         genres = ''
         actors = ''
         directors = ''
+        actor = ''
+        director = ''
+        genre = ''
         for k, v in request.query_params.items():
             if k == 'title':
                 title = v
@@ -25,10 +26,10 @@ def movies(request):
                 actors = v
             elif k == 'directors':
                 directors = v
-        actor = Actor.objects.filter(peopleNm=title)
-        director = Director.objects.filter(peopleNm=title)
-        genre = Genre.objects.filter(genreNm=title)
-        embed()
+        if title:
+            actor = Actor.objects.filter(peopleNm=title)
+            director = Director.objects.filter(peopleNm=title)
+            genre = Genre.objects.filter(genreNm=title)
         if actor:
             title = actor[0].id
         elif director:
