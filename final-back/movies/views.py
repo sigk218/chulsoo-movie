@@ -8,10 +8,60 @@ from django.contrib.auth import get_user_model
 
 
 # Create your views here.
-@api_view(['GET', 'POST',])
+@api_view(['GET', 'POST'])
 def movies(request):
     if request.method == 'GET':
-        movies = Movie.objects.all()
+        title = ''
+        genres = ''
+        actors = ''
+        directors = ''
+        for k, v in request.data.items():
+            if k == 'title':
+                title = v
+            elif k == 'userRating':
+                userRating = v
+            elif k == 'genres':
+                genres = v
+            elif k == 'actors':
+                actors = v
+            elif k == 'directors':
+                directors = v
+        if genres and actors and directors:
+            movies = Movie.objects.filter(title__contains=title,
+                                          genres=genres,
+                                          actors=actors,
+                                          directors=directors
+                                          )
+        elif genres and actors:
+            movies = Movie.objects.filter(title__contains=title,
+                                          genres=genres,
+                                          actors=actors
+                                          )
+        elif genres and directors:
+            movies = Movie.objects.filter(title__contains=title,
+                                          genres=genres,
+                                          directors=directors
+                                          )
+        elif genres and actors:
+            movies = Movie.objects.filter(title__contains=title,
+                                          genres=genres,
+                                          actors=actors
+                                          )
+        elif genres:
+            movies = Movie.objects.filter(title__contains=title,
+                                          genres=genres,
+                                          )
+        elif actors:
+            movies = Movie.objects.filter(title__contains=title,
+                                          actors=actors,
+                                          )
+        elif directors:
+            movies = Movie.objects.filter(title__contains=title,
+                                          directors=directors,
+                                          )
+        else:
+            movies = Movie.objects.filter(title__contains=title)
+
         serializer = MovieSerializer(movies, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
