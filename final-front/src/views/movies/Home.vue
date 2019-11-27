@@ -89,11 +89,10 @@ export default {
       this.movie = data
     },
     submit(){
-      console.log(this.searchWord)
-      this.options.params.title = this.searchWord
-      console.log(this.options)
+      this.options.body.title = this.searchWord
       axios.get(MOVIE_URL, this.options)
       .then(res=>{
+        this.movies = res.data
         console.log(res)
       })
       this.searchmode = false
@@ -112,7 +111,7 @@ export default {
       headers: {
       Authorization: 'JWT ' + this.token
     },
-    params: {
+    body: {
       title: ''
     }
   }    
