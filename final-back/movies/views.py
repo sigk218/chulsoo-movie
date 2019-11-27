@@ -28,7 +28,7 @@ def movies(request):
         actor = Actor.objects.filter(peopleNm=title)
         director = Director.objects.filter(peopleNm=title)
         genre = Genre.objects.filter(genreNm=title)
-        embed()
+        # embed()
         if actor:
             title = actor[0].id
         elif director:
