@@ -15,11 +15,9 @@ def movies(request):
         genres = ''
         actors = ''
         directors = ''
-        for k, v in request.data.items():
+        for k, v in request.query_params.items():
             if k == 'title':
                 title = v
-            elif k == 'userRating':
-                userRating = v
             elif k == 'genres':
                 genres = v
             elif k == 'actors':
