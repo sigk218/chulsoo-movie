@@ -45,5 +45,19 @@ def detail(request, user_pk):
     return Response(status=400)
 
 
-
-        
+@api_view(['POST'])
+def follow(request, follower_pk, following_pk):
+    follower = get_object_or_404(get_user_model(), pk=follower_pk)
+    following = get_object_or_404(get_user_model(), pk=following_pk)
+    if request.method == 'POST':
+        if not following.followers.filter(pk=follower_pk):
+            following.followers.add(follower)
+            return Response({
+                'message': f'{follower.username}님 {following.username} 팔로우 완료'
+            })
+        else:
+            following.followers.remove(follower)
+            return Response({
+                'message': f'{follower.username}님 {following.username} 팔로우 취소'
+            })
+    return Response(status=400)
