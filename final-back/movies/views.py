@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from .models import Actor, Director, Genre, Movie, Rating
 from .serializers import ActorSerializer, DirectorSerializer, GenreSerializer, MovieSerializer, RatingSerializer
 from django.contrib.auth import get_user_model
-from IPython import embed
+# from IPython import embed
 
 
 # Create your views here.
