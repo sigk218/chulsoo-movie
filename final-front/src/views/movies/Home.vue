@@ -1,13 +1,22 @@
 <template>
   <div class="home">
       <v-app-bar absolute> 
-      <v-icon>mdi-magnify</v-icon>  
+      <!-- <v-icon>mdi-magnify</v-icon>   -->
       <v-toolbar-title>ChulSoo MOVIE</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn text>
-        <v-icon>mdi-magnify</v-icon>검색
+        
+        <v-btn text @click="searchmode = !searchmode">
+        <v-icon>mdi-magnify</v-icon>
         </v-btn>
+        <v-text-field 
+        style="margin-top: 4.5px" 
+        v-show="searchmode" 
+        label="search" 
+        single-line outlined
+        v-model="searchWord"
+        @keyup.enter="submit"
+        ></v-text-field>
         <v-btn text>
         <v-icon color="primary">mdi-heart</v-icon>보고싶어요
         </v-btn>
@@ -21,7 +30,7 @@
           v-on="on"
         >
           {{ user.username }}
-          <v-icon @click.native="show = !show">{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+          <v-icon @click="show = !show">{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
         </v-btn>
       </template>
       <v-list>
@@ -64,6 +73,10 @@ export default {
       show: false,
       showlist: true,
       movie: '',
+      searchmode: false,
+      searchWord:'',
+      token: '',
+      options: '',
     }
   },
   methods:{
@@ -75,6 +88,17 @@ export default {
       this.showlist = false
       this.movie = data
     },
+    submit(){
+      console.log(this.searchWord)
+      this.options.params.title = this.searchWord
+      console.log(this.options)
+      axios.get(MOVIE_URL, this.options)
+      .then(res=>{
+        console.log(res)
+      })
+      this.searchmode = false
+      this.searchWord= ''
+    },
   },
   computed: {
     user() {
@@ -83,14 +107,17 @@ export default {
   },
   mounted(){
     // const user_id = jwtDecode(token).user_id
-    const token = this.$session.get('jwt')
-    const options = {
+    this.token = this.$session.get('jwt')
+    this.options = {
       headers: {
-      Authorization: 'JWT ' + token
+      Authorization: 'JWT ' + this.token
+    },
+    params: {
+      title: ''
     }
   }    
-  console.log(VueJwtDecode.decode(token))
-  axios.get(MOVIE_URL, options)
+  console.log(VueJwtDecode.decode(this.token))
+  axios.get(MOVIE_URL, this.options)
     .then(res=>{
       this.movies = res.data 
       // console.log(res.data)
