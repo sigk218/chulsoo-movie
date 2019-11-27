@@ -22,6 +22,10 @@ class Movie(models.Model):
     genres = models.ManyToManyField(Genre, related_name='movies')
     actors = models.ManyToManyField(Actor, related_name='movies')
     directors = models.ManyToManyField(Director, related_name='movies')
+    youtube_price = models.CharField(max_length=150)
+    youtube_link = models.TextField()
+    naver_price = models.CharField(max_length=150)
+    naver_link =  models.TextField()
 
 class Rating(models.Model):
     content = models.TextField()
