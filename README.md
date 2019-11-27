@@ -150,7 +150,6 @@ router.push({name: 'login'}).catch(err => {})
 
 
 
-=======
 ### md-icons 설치
 
 In `bash`,
@@ -165,7 +164,7 @@ In `main.js`
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 ```
 
-<<<<<<< HEAD
+
 
 
 ### 유저정보 뽑아내기
@@ -174,5 +173,9 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
 npm install vue-jwt-decode
 ```
 
-=======
->>>>>>> master
+
+
+```
+pip install django-rest-auth
+```
+
