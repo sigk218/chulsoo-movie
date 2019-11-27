@@ -28,14 +28,15 @@
           color="primary"
           dark
           v-on="on"
+          @click="show = !show"
         >
           {{ user.username }}
-          <v-icon @click="show = !show">{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+          <v-icon >{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
         </v-btn>
       </template>
       <v-list>
         <v-list-item>
-          <v-list-item-title><v-btn text>My page</v-btn></v-list-item-title>
+          <v-list-item-title><a href="/about/" style="text-decoration: none"><v-btn text>My page</v-btn></a></v-list-item-title>
         </v-list-item>
         <v-list-item>
           <v-list-item-title><v-btn text @click="logout">Logout</v-btn></v-list-item-title>

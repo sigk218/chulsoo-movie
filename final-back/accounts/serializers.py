@@ -6,7 +6,7 @@ from rest_framework import serializers
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
-        fields = ('id', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'date_joined', 'rating_set', 'like_movie', 'followers', 'followings')
+        fields = ('id', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'date_joined', 'rating_set', 'like_movie', 'followers', 'followings',)
 
 class NameRegistrationSerializer(RegisterSerializer):
     first_name = serializers.CharField(required=False)
