@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from .models import Actor, Director, Genre, Movie, Rating
 from .serializers import ActorSerializer, DirectorSerializer, GenreSerializer, MovieSerializer, RatingSerializer
 from django.contrib.auth import get_user_model
+from django.db.models import Q
 # from IPython import embed
 
 
@@ -24,6 +25,16 @@ def movies(request):
                 actors = v
             elif k == 'directors':
                 directors = v
+        actor = Actor.objects.filter(peopleNm=title)
+        director = Director.objects.filter(peopleNm=title)
+        genre = Genre.objects.filter(genreNm=title)
+        embed()
+        if actor:
+            title = actor[0].id
+        elif director:
+            title = director[0].id
+        elif genre:
+            title = genre[0].id
         if genres and actors and directors:
             movies = Movie.objects.filter(title__contains=title,
                                           genres=genres,
@@ -58,8 +69,7 @@ def movies(request):
                                           directors=directors,
                                           )
         else:
-            movies = Movie.objects.filter(title__contains=title)
-
+            movies = Movie.objects.filter(Q(title__contains=title) | Q(genres=title) | Q(actors=title) | Q(directors=title))
         serializer = MovieSerializer(movies, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
