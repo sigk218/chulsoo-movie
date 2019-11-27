@@ -6,6 +6,7 @@ from .serializers import ActorSerializer, DirectorSerializer, GenreSerializer, M
 from django.contrib.auth import get_user_model
 from django.db.models import Q
 
+
 # Create your views here.
 @api_view(['GET', 'POST'])
 def movies(request):
@@ -17,6 +18,9 @@ def movies(request):
         actor = ''
         director = ''
         genre = ''
+        actorid = 0
+        directorid = 0
+        genreid = 0
         for k, v in request.query_params.items():
             if k == 'title':
                 title = v
@@ -30,12 +34,14 @@ def movies(request):
             actor = Actor.objects.filter(peopleNm=title)
             director = Director.objects.filter(peopleNm=title)
             genre = Genre.objects.filter(genreNm=title)
+
         if actor:
-            title = actor[0].id
+            actorid = actor[0].id
         elif director:
-            title = director[0].id
+            directorid = director[0].id
         elif genre:
-            title = genre[0].id
+            genreid = genre[0].id
+
         if genres and actors and directors:
             movies = Movie.objects.filter(title__contains=title,
                                           genres=genres,
@@ -70,7 +76,15 @@ def movies(request):
                                           directors=directors,
                                           )
         else:
-            movies = Movie.objects.filter(Q(title__contains=title) | Q(genres=title) | Q(actors=title) | Q(directors=title))
+            movies = Movie.objects.filter(title__contains=title)
+
+        if actorid:
+            movies = Movie.objects.filter(actors=actorid)
+        elif genreid:
+            movies = Movie.objects.filter(genres=genreid)
+        elif directorid:
+            movies = Movie.objects.filter(directors=directorid)
+        
         serializer = MovieSerializer(movies, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
