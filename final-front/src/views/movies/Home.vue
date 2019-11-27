@@ -112,7 +112,7 @@ export default {
       Authorization: 'JWT ' + this.token
     },
     params: {
-      title: ''
+      title: '',
     }
   }    
   console.log(VueJwtDecode.decode(this.token))
