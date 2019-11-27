@@ -19,6 +19,10 @@
                           mdi-play
                         </v-icon>
                 </v-card-title>
+                <v-button>
+                  <v-icon>heart-outline</v-icon>
+                </v-button>
+                
               </v-img>
               
             </v-card>
