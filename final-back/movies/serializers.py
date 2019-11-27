@@ -23,7 +23,8 @@ class MovieSerializer(serializers.ModelSerializer):
     # genres = GenreSerializer(many=True)
     class Meta:
         model = Movie
-        fields = ('id', 'title', 'link', 'image', 'subtitle', 'pubDate', 'userRating', 'description', 'genres',) # 'actors', 'directors',)
+        fields = ('id', 'title', 'link', 'image', 'subtitle', 'pubDate', 'userRating', 'description', 'genres', 'actors', 'directors', 'youtube_price', 'youtube_link', 'naver_price', 'naver_link')
+        
 
 
 class RatingSerializer(serializers.ModelSerializer):
