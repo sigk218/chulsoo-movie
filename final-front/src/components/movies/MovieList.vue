@@ -28,6 +28,11 @@ export default {
     movieSelected(data) {
       this.$emit('selectedMovie', data)
     }
+  },
+  watch: {
+    movies: function() {
+      
+    }
   }
 }
 </script>
