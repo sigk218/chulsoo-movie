@@ -35,7 +35,6 @@
         <h3>Options</h3>
         <v-text-field
         v-model="firstname"
-        :error-messages="nameErrors"
         :counter="20"
         label="First Name"
         @input="$v.names.$touch()"
@@ -44,7 +43,6 @@
       
       <v-text-field
         v-model="lastname"
-        :error-messages="nameErrors"
         :counter="20"
         label="Last Name"
         @input="$v.names.$touch()"

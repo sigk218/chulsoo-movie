@@ -1,7 +1,8 @@
 <template>
 <div>
    <v-card-text>
-    <v-form>
+    <v-form @>
+      
       <v-text-field
         v-model="name"
         :error-messages="nameErrors"
@@ -23,7 +24,7 @@
             counter
             @click:append="show1 = !show1"
           ></v-text-field>
-
+  <h3 class="red--text font-weight-thin" v-if="errors == 'on'">아이디 또는 비밀번호가 잘못되었습니다.</h3>
     </v-form>
     </v-card-text>
     <v-card-actions>
@@ -59,6 +60,7 @@
       name: '',
       email: '',
       select: null,
+      errors: 'off',
       items: [
         'Item 1',
         'Item 2',
@@ -115,10 +117,13 @@
         // this.$router == router
         router.push('/')
         console.log(this.$session)
-      })
+      }).catch(err => {
+        console.log(err)
+        this.errors = 'on'
+      }
+      )
     }
-    }
-  }
+    }}
 </script>
 
 <style>
