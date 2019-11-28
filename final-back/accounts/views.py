@@ -29,19 +29,23 @@ def users(request):
         'message': 400
     })
 
-@api_view(['GET', 'DELETE'])
+
+@api_view(['GET', 'PUT','DELETE'])
 def detail(request, user_pk):
     user = get_object_or_404(get_user_model(), pk=user_pk)
     if request.method == 'GET':
         serializer = UserSerializer(user)
         return Response(serializer.data)
     elif request.method == 'DELETE':
-        if request.user == user:
-            username = user.username
-            user.delete()
-            return Response({
-                'message': f'유저 {username}이 정상적으로 삭제되었습니다.'
-            })
+        username = user.username
+        user.delete()
+        return Response({
+            'message': f'유저 {username}이 정상적으로 삭제되었습니다.'
+        })
+    elif request.method == 'PUT':
+        serializer = UserSerializer(user, data=request.PUT)
+        serializer.save()
+        return Response(serializer.data)
     return Response(status=400)
 
 

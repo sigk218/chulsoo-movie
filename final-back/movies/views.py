@@ -5,7 +5,7 @@ from .models import Actor, Director, Genre, Movie, Rating
 from .serializers import ActorSerializer, DirectorSerializer, GenreSerializer, MovieSerializer, RatingSerializer
 from django.contrib.auth import get_user_model
 from django.db.models import Q
-
+from IPython import embed
 
 # Create your views here.
 @api_view(['GET', 'POST'])
@@ -183,3 +183,39 @@ def like_movie(request, movie_pk, user_pk):
                 'message': f'{user.username}님 영화{movie.title} 좋아요 취소'
             })
     return Response(status=400)
+
+@api_view(['GET'])
+def recommendation(request, user_pk):
+    user = get_object_or_404(get_user_model(), pk=user_pk)
+    rcmnd = {}
+    like_movies = user.like_movie.all()
+    for movie in like_movies:
+        # embed()
+        for genre in movie.genres.all():
+            g_movies = Movie.objects.filter(genres=genre.id)
+            for g_movie in g_movies:
+                if rcmnd.get(g_movie.id):
+                    rcmnd[g_movie.id] += 2
+                else:
+                    rcmnd[g_movie.id] = 2
+        for actor in movie.actors.all():
+            a_movies = Movie.objects.filter(actors=actor.id)
+            for a_movie in a_movies:
+                if rcmnd.get(a_movie.id):
+                    rcmnd[a_movie.id] += 1
+                else:
+                    rcmnd[a_movie.id] = 1
+        for director in movie.directors.all():
+            d_movies = Movie.objects.filter(directors=director.id)
+            for d_movie in d_movies:
+                if rcmnd.get(d_movie.id):
+                    rcmnd[d_movie.id] += 3
+                else:
+                    rcmnd[d_movie.id] = 3
+    rcmnd = sorted(rcmnd.items(), key=lambda x: x[1], reverse=True)
+    rcccd = []
+    for movieid in rcmnd:
+        if not user.like_movie.filter(pk=movieid[0]):
+            rcccd.append(movieid[0])
+
+    return Response(rcccd)
