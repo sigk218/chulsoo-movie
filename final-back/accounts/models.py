@@ -5,5 +5,5 @@ from movies.models import Movie
 
 # Create your models here.
 class User(AbstractUser):
-    followers = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='followings')
-    like_movie = models.ManyToManyField(Movie, related_name='like_user')
+    followers = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='followings', blank=True)
+    like_movie = models.ManyToManyField(Movie, related_name='like_user', blank=True)
