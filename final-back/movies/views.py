@@ -4,8 +4,6 @@ from rest_framework.response import Response
 from .models import Actor, Director, Genre, Movie, Rating
 from .serializers import ActorSerializer, DirectorSerializer, GenreSerializer, MovieSerializer, RatingSerializer
 from django.contrib.auth import get_user_model
-from django.db.models import Q
-from IPython import embed
 
 # Create your views here.
 @api_view(['GET', 'POST'])
@@ -95,7 +93,7 @@ def movies(request):
     return Response(status=400)
 
 
-@api_view(['GET', 'DELETE',])
+@api_view(['GET', 'DELETE', 'PUT'])
 def detail(request, movie_pk):
     movie = get_object_or_404(Movie, pk=movie_pk)
     if request.method == 'GET':
@@ -107,6 +105,13 @@ def detail(request, movie_pk):
         return Response({
             'message': f'영화 {title}(이)가 제거 되었습니다.'
         })
+    elif request.method == 'PUT':
+        # 업데이트할 때 영화정보 웬만하면 다 넣어주자.
+        serializer = MovieSerializer(movie, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+
     return Response(status=400)
 
 

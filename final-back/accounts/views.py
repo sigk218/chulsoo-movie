@@ -10,24 +10,15 @@ from .forms import CustomUserCreationForm
 from django.core import serializers
 from django.views.decorators.csrf import ensure_csrf_cookie
 
+
 # Create your views here.
-@require_http_methods(['GET', 'POST'])
-@ensure_csrf_cookie
+@api_view(['GET'])
 def users(request):
     if request.method == 'GET':
         users = User.objects.all()
-        serializer = serializers.serialize('json', users)
-        return JsonResponse(serializer, safe=False)
-# 여기를 분리해줘야돼!! 회원가입은 따로!
-    elif request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            serializer = serializers.serialize('json', form)
-            return JsonResponse(serializer, safe=False)
-    return JsonResponse({
-        'message': 400
-    })
+        serializer = UserSerializer(users, many=True)
+        return Response(serializer.data)
+    return Response(status=400)
 
 
 @api_view(['GET', 'PUT','DELETE'])
@@ -43,9 +34,11 @@ def detail(request, user_pk):
             'message': f'유저 {username}이 정상적으로 삭제되었습니다.'
         })
     elif request.method == 'PUT':
-        serializer = UserSerializer(user, data=request.PUT)
-        serializer.save()
-        return Response(serializer.data)
+        # body 정보를 보낼 때 username, is_active 까지 보내주어야 됨.
+        serializer = UserSerializer(user, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
     return Response(status=400)
 
 
