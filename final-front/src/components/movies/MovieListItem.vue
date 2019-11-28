@@ -13,9 +13,8 @@
         ></v-img>
      </v-card>
   </v-hover>
-    <v-overlay :absolute="absolute" :opacity="opacity" :value="overlay" :z-index="zIndex">
-    <MovieDetail  :movie="movie"></MovieDetail>
-    <v-btn @click="overlay = false">EXIT</v-btn>
+    <v-overlay class="overflow-y-auto" :absolute="absolute" :opacity="opacity" :value="overlay" :z-index="zIndex">
+    <MovieDetail @close-Window="overlay=false" :movie="movie" :overlay="overlay"></MovieDetail>
   </v-overlay>
 </div>
 </template>
@@ -24,6 +23,7 @@
 import MovieDetail from './MovieDetail'
 
 export default {
+    name: 'MoveListItem',
      data: () => ({
       show: false,
       transparent: 'rgba(255, 255, 255, 0)',
@@ -32,7 +32,6 @@ export default {
       overlay: false,
       zIndex: 5,
     }),
-    name: 'MoveListItem',
     components: {
         MovieDetail
     },
@@ -44,7 +43,8 @@ export default {
     },
     methods:{
 
-    }
+    },
+
 }
 </script>
 

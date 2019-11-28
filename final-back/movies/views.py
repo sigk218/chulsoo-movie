@@ -5,7 +5,7 @@ from .models import Actor, Director, Genre, Movie, Rating
 from .serializers import ActorSerializer, DirectorSerializer, GenreSerializer, MovieSerializer, RatingSerializer
 from django.contrib.auth import get_user_model
 from django.db.models import Q
-from IPython import embed
+# from IPython import embed
 
 # Create your views here.
 @api_view(['GET', 'POST'])
