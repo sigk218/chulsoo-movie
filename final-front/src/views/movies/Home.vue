@@ -89,12 +89,13 @@ export default {
       this.movie = data
     },
     submit(){
-      console.log(this.searchWord)
+      // console.log(this.searchWord)
       this.options.params.title = this.searchWord
-      console.log(this.options)
+      // console.log(this.options)
       axios.get(MOVIE_URL, this.options)
       .then(res=>{
-        console.log(res)
+        this.movies = res.data
+        // console.log(res)
       })
       this.searchmode = false
       this.searchWord= ''

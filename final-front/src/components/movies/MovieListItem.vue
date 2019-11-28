@@ -1,43 +1,40 @@
 <template>
 <div class="ma-3">
-  <a @click="movieSelected">
    <v-hover v-slot:default="{ hover }">
-            <v-card
-              :elevation="hover ? 12 : 2"
-              :class="{ 'on-hover': hover }"
-            >
-              <v-img
-                :src="movie.image"
-                width="200px"
-                class="d-flex align-center"
-              >
-                <v-card-title class="d-flex justify-center">
-                        <v-icon
-                          :class="{ 'show-btns': hover }"
-                          x-large
-                        >
-                          mdi-play
-                        </v-icon>
-                </v-card-title>
-              </v-img>
-              
-            </v-card>
-          </v-hover>
-          </a>
+     <v-card
+      :elevation="hover ? 12 : 2"
+      :class="{ 'on-hover': hover }"
+      >
+        <v-img
+        :src="movie.image"
+        width="200px"
+        class="d-flex align-center"
+        @click="overlay = !overlay"
+        ></v-img>
+     </v-card>
+  </v-hover>
+    <v-overlay :absolute="absolute" :opacity="opacity" :value="overlay" :z-index="zIndex">
+    <MovieDetail  :movie="movie"></MovieDetail>
+    <v-btn @click="overlay = false">EXIT</v-btn>
+  </v-overlay>
 </div>
 </template>
 
 <script>
-// import MovieDetail from './MovieDetail'
+import MovieDetail from './MovieDetail'
 
 export default {
      data: () => ({
       show: false,
       transparent: 'rgba(255, 255, 255, 0)',
+      absolute: false,
+      opacity: 0.46,
+      overlay: false,
+      zIndex: 5,
     }),
     name: 'MoveListItem',
     components: {
-        // MovieDetail
+        MovieDetail
     },
     props: {
         movie:{
@@ -46,9 +43,7 @@ export default {
         }    
     },
     methods:{
-      movieSelected() {
-        this.$emit('selectedMovie', this.movie)
-      },
+
     }
 }
 </script>

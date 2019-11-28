@@ -1,13 +1,20 @@
 <template>
 <v-container class="mt-10">
-  <h1>
-    {{ movie.title }}
-  </h1>
+  <img :src="movie.image" :alt="movie.title" width="300px" height="400px">
+  <h1>{{ movie.title }}</h1>
+  <h2>{{ movie.subtitle }}</h2>
+  <p>{{ movie.userRating }}</p>
+  <p>{{ movie.acotors }}</p>
+  <p>{{ movie.directors }}</p>
+  <p>{{ movie.genres }}</p>
+  <p>{{ movie.description }}</p>
+  <p>{{ movie.naver_price }}</p>
+  <p>{{ movie.youtube_price }}</p>
 </v-container>
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 
 export default {
   name: 'MovieDetail',
@@ -30,21 +37,7 @@ export default {
     
   },
   mounted(){
-//     // const user_id = jwtDecode(token).user_id
-//     const token = this.$session.get('jwt')
-//     const options = {
-//       headers: {
-//       Authorization: 'JWT ' + token
-//     }
-//   }    
-//   CORS error 남.. 
-  axios.get(this.movie.link)
-    .then(res=>{
-      console.log(res.data)
-    }).catch(err => {
-        console.log(err)
-    })
-    console.log(this.movie)
+
   }
 }
 </script>
