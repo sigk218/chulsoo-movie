@@ -22,12 +22,12 @@ export default {
   },
   data() {
     return {
-      movies: '',
+      movies: [],
       genres: '',
       show: false,
       display: 'list',
       token: '',
-      options: '',
+      options: Object, 
     }
   },
   methods:{
