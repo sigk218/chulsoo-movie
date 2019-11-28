@@ -59,6 +59,9 @@ const MOVIE_URL = 'http://127.0.0.1:8000/api/v1/movies/'
       user:{
         type: Object
       },
+      options: {
+        type: Object
+      },
     },
     data(){
       return {
@@ -69,8 +72,6 @@ const MOVIE_URL = 'http://127.0.0.1:8000/api/v1/movies/'
         movie: '',
         searchmode: false,
         searchWord:'',
-        token: '',
-        options: '',
         }
     },
     methods:{
