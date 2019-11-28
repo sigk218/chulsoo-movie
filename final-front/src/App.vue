@@ -1,15 +1,19 @@
 <template>
   <v-app>
-    <router-view :user="user" />
+    <Navbar v-if="loggedIn()" :user="user" @submitted="submit" />
+    <router-view />
   </v-app>
 </template>
 
 <script>
+import Navbar from '@/components/accounts/Navbar'
+import VueJwtDecode from 'vue-jwt-decode'
 import router from '@/router'
 
 export default {
   name: 'home',
   components: {
+    Navbar,
   },
   data() {
     return {
@@ -32,6 +36,14 @@ export default {
         return true
       }
     },
+    submit(data){
+        this.movies = data
+    },
+  },
+  computed: {
+    user() {
+      return VueJwtDecode.decode(this.$session.get('jwt'))
+    }
   },
   mounted() {
   this.loggedIn()

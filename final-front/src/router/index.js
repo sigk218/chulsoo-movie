@@ -27,6 +27,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import('@/views/movies/About.vue')
   },
+  {
+    path: '/search/:word',
+    name: 'search',
+    component: () => import('@/views/movies/Search.vue')
+  },
 ]
 
 const router = new VueRouter({

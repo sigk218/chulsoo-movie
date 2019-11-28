@@ -2,7 +2,8 @@
  <div class="Navbar">
 <v-app-bar absolute> 
       <v-icon>mdi-magnify</v-icon>  
-      <v-toolbar-title>ChulSoo MOVIE</v-toolbar-title>
+      <a class="black--text" href="/" style="text-decoration:none"><v-toolbar-title>ChulSoo MOVIE</v-toolbar-title></a>
+      
       <v-spacer></v-spacer>
       <v-toolbar-items>
         
@@ -49,10 +50,6 @@
 
 <script>
 import router from '@/router'
-import axios from 'axios'
-
-const MOVIE_URL = 'http://127.0.0.1:8000/api/v1/movies/'
-
   export default {
     name: 'About',
     props: {
@@ -84,12 +81,9 @@ const MOVIE_URL = 'http://127.0.0.1:8000/api/v1/movies/'
       this.movie = data
     },
     submit(){
-      this.options.params.title = this.searchWord
-      axios.get(MOVIE_URL, this.options)
-      .then(res=>{
-        this.movies = res.data
+      router.push(`/search/${this.searchWord}`, () => {
+        router.go()
       })
-      this.$emit('submitted', this.movies)
       this.searchmode = false
       this.searchWord= ''
     },

@@ -1,8 +1,7 @@
 <template>
-  <div class="home mt-5">
+  <div class="search mt-5">
     <MovieList v-if="display == 'list' " :movies="movies" :user="user" />
   </div>
-
 </template>
 
 <script>
@@ -12,6 +11,7 @@ import VueJwtDecode from 'vue-jwt-decode'
 import axios from 'axios'
 
 const MOVIE_URL = 'http://127.0.0.1:8000/api/v1/movies/'
+
 export default {
   name: 'home',
   components: {
@@ -24,8 +24,8 @@ export default {
       genres: '',
       show: false,
       display: 'list',
-      token: '',
       options: '',
+      token: '',
     }
   },
   methods:{
@@ -45,14 +45,15 @@ export default {
       return VueJwtDecode.decode(this.$session.get('jwt'))
     },
   },
-  mounted(){
+  mounted() {
+    console.log(this.$route.params.word)
     this.token = this.$session.get('jwt')
     this.options = {
-      headers: {
-      Authorization: 'JWT ' + this.token
+        headers: {
+        Authorization: 'JWT ' + this.token
     },
     params: {
-      title: ''
+      title: this.$route.params.word
     }
   }    
   console.log(VueJwtDecode.decode(this.token))
