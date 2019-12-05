@@ -82,7 +82,10 @@ import MovieDetail from '@/components/movies/MovieDetail.vue'
 import VueJwtDecode from 'vue-jwt-decode'
 import axios from 'axios'
 
-  export default {
+
+const BASE_URL =  process.env.VUE_APP_BASE_URL
+const MOVIE_URL = BASE_URL + 'api/v1/accounts/'
+export default {
     name: 'About',
     components: {
       MovieDetail
@@ -130,13 +133,13 @@ import axios from 'axios'
     },
     }
     // console.log(this.user)
-    axios.get(`http://127.0.0.1:8000/api/v1/accounts/${this.user.user_id}/`, this.options)
+    axios.get(MOVIE_URL+`${this.user.user_id}/`, this.options)
     .then(res => {
       this.userDetail = res.data
       this.movies = res.data.like_movie
       for (let i = 0; i < this.movies.length; i++) {
           // console.log(this.movies[i])
-        axios.get(`http://127.0.0.1:8000/api/v1/movies/${this.movies[i]}/`, this.options)
+        axios.get(MOVIE_URL+`${this.movies[i]}/`, this.options)
         .then(res => {
           this.myMovies.push(res.data)
         }).catch(err=>{
@@ -147,11 +150,11 @@ import axios from 'axios'
       console.log(err)
     })
 
-    axios.get(`http://127.0.0.1:8000/api/v1/recommendation/${this.user.user_id}/`, this.options)
+    axios.get(MOVIE_URL+`recommendation/${this.user.user_id}/`, this.options)
     .then(res => {
       // console.log(res.data)
       for (let i=0; i < 10; i++) {
-        axios.get(`http://127.0.0.1:8000/api/v1/movies/${res.data[i]}/`, this.options)
+        axios.get(`${res.data[i]}/`, this.options)
         .then(res => {
           // console.log(res.data)
           this.recMovies.push(res.data)
@@ -159,7 +162,7 @@ import axios from 'axios'
       }
       
       for (let j=res.data.length - 1; j > res.data.length - 10; j--) {
-        axios.get(`http://127.0.0.1:8000/api/v1/movies/${res.data[j]}/`, this.options)
+        axios.get(MOVIE_URL+`${res.data[j]}/`, this.options)
         .then(res => {
           // console.log(res.data)
           this.derMovies.push(res.data)

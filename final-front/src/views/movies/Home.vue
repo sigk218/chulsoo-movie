@@ -10,13 +10,13 @@ import MovieList from '@/components/movies/MovieList'
 import router from '@/router'
 import VueJwtDecode from 'vue-jwt-decode'
 import axios from 'axios'
+const BASE_URL =  process.env.VUE_APP_BASE_URL
+const MOVIE_URL = BASE_URL +'api/v1/movies/'
 
-const MOVIE_URL = 'http://127.0.0.1:8000/api/v1/movies/'
 export default {
   name: 'home',
   components: {
     MovieList,
-
   },
   data() {
     return {
@@ -26,6 +26,7 @@ export default {
       display: 'list',
       token: '',
       options: Object, 
+      page: 1,
     }
   },
   methods:{
@@ -37,7 +38,6 @@ export default {
   },
   watch: {
       movies: function() {
-
       }
   },
   computed: {
@@ -55,7 +55,8 @@ export default {
       title: ''
     }
   }    
-  console.log(VueJwtDecode.decode(this.token))
+  // console.log(VueJwtDecode.decode(this.token))
+  // console.log(this.token)
   axios.get(MOVIE_URL, this.options)
     .then(res=>{
       this.movies = res.data

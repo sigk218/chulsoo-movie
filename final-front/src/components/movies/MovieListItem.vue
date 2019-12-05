@@ -28,7 +28,7 @@ export default {
       show: false,
       transparent: 'rgba(255, 255, 255, 0)',
       absolute: false,
-      opacity: 0.46,
+      opacity: 0.7,
       overlay: false,
       zIndex: 5,
     }),

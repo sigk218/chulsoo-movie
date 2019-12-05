@@ -10,7 +10,8 @@
 <script>
 import VueJwtDecode from 'vue-jwt-decode'
 import axios from 'axios'
-const MOVIE_URL = 'http://127.0.0.1:8000/api/v1/movies/'
+const BASE_URL =  process.env.VUE_APP_BASE_URL
+const MOVIE_URL = BASE_URL+'api/v1/movies/'
 
 export default {
     name: "MovieLike",

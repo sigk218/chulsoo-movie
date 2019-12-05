@@ -64,6 +64,8 @@
   import { required, maxLength, email } from 'vuelidate/lib/validators'
   import router from '@/router'
   import axios from 'axios'
+  const BASE_URL =  process.env.VUE_APP_BASE_URL
+  const SIGNUP_URL = BASE_URL + 'rest-auth/registration/'
 
   export default {
     name: 'LoginForm',
@@ -143,7 +145,7 @@
         this.lastname = 'none'
       }
 
-      axios.post('http://127.0.0.1:8000/rest-auth/registration/', 
+      axios.post(SIGNUP_URL, 
       {username: this.name,
       email: this.email,
       password1: this.password,
@@ -164,7 +166,6 @@
         })
       }
     }
-  
   }
 </script>
 

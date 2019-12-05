@@ -41,6 +41,8 @@
   import { required, maxLength, email } from 'vuelidate/lib/validators'
   import router from '@/router'
   import axios from 'axios'
+  const BASE_URL =  process.env.VUE_APP_BASE_URL
+  const LOGIN_URL = BASE_URL + 'api-token-auth/'
 
   export default {
     name: 'LoginForm',
@@ -108,7 +110,7 @@
         this.password = ''
       },
       login() {
-      axios.post('http://localhost:8000/api-token-auth/', {username: this.name, password: this.password})
+      axios.post(LOGIN_URL, {username: this.name, password: this.password})
       .then(res => {
         console.log(res)
         // start는 session id를 초기화 한다는 메소드임

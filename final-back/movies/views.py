@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from .models import Actor, Director, Genre, Movie, Rating
 from .serializers import ActorSerializer, DirectorSerializer, GenreSerializer, MovieSerializer, RatingSerializer
 from django.contrib.auth import get_user_model
+from rest_framework import pagination, generics
 
 # Create your views here.
 @api_view(['GET', 'POST'])
@@ -92,6 +93,14 @@ def movies(request):
             return Response(serializer.data)
     return Response(status=400)
 
+class MoviePagination(pagination.PageNumberPagination):
+    page_size = 20  # the no. of company objects you want to send in one go
+
+# Assume url for this view is /api/v1/movies/
+class MovieListView(generics.ListAPIView):
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
+    pagination_class = MoviePagination
 
 @api_view(['GET', 'DELETE', 'PUT'])
 def detail(request, movie_pk):
