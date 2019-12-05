@@ -95,12 +95,15 @@ def movies(request):
 
 class MoviePagination(pagination.PageNumberPagination):
     page_size = 20  # the no. of company objects you want to send in one go
+    page_size_query_param ='page_size'
+    # max_page_size = 5
 
-# Assume url for this view is /api/v1/movies/
+
 class MovieListView(generics.ListAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
     pagination_class = MoviePagination
+
 
 @api_view(['GET', 'DELETE', 'PUT'])
 def detail(request, movie_pk):
