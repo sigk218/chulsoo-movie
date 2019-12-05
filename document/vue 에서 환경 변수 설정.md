@@ -182,6 +182,75 @@ http 400 에러
 
 
 
+## 무한 스크롤 
+
+사용자가 필요한 만큼만 리소스를 요청 -> 한번에 리소스를 로드하는 것보다 속도가 빠름. 
+
+
+
+
+
+### back-end
+
+#### pagination 
+
+전체 자료를 적절히 나눌 때 `pagination` 을 사용. 
+
+ [공식 문서](https://www.django-rest-framework.org/api-guide/pagination/), [stackoverflow](https://stackoverflow.com/questions/38173984/using-infinite-scroll-with-django-rest-framework)
+
+Django는 `Privious/Next` 링크를 통한 `pagination` 을 제공.
+
+마찬가지로 REST framework도 이를 지원하며, 한 페이지당 몇 개의 데이터를 넣을 것인지 정할 수 있다.  
+
+
+
+이 부분은 공식 문서에 class로 정의되어 있었다. 
+
+따라서, [클래스 기반 뷰](https://wayhome25.github.io/django/2017/05/02/CBV/) 을 기반으로 url과 view class를 정의했다.
+
+
+
+In `urls.py` 
+
+```
+path('movies/list/', views.MovieListView.as_view()), # as_view() 클래스 함수를 통해 함수뷰 생성
+```
+
+
+
+In `movies > views.py`
+
+```python
+class MoviePagination(pagination.PageNumberPagination):
+    page_size = 20
+
+
+class MovieListView(generics.ListAPIView):
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
+    pagination_class = MoviePagination
+```
+
+class 는 데코레이터를 달 수 없고, return 값이 없어도 된다 ! (class와 함수의 차이는 ? )
+
+
+
+Postman을 통해 `http://127.0.0.1:8000/api/v1/movies/list/?page=[page_num]` 에 GET 요청을 보내면 
+
+page_size 만큼 결과를 받을 수 있다.
+
+
+
+
+
+### front-end
+
+
+
+https://github.com/ElemeFE/vue-infinite-scroll
+
+
+
 고쳐야 할 것 
 
 - [ ] data 크롤링 (최신 정보로, 제목 맞춰서)
