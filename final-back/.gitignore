@@ -126,3 +126,4 @@ venv
 *.sqlite3
 .env
 *.bak
+final-venv/
