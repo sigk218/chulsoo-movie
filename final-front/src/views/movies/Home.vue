@@ -2,7 +2,6 @@
   <div class="home mt-5" >
     <MovieList v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="100" v-if="display == 'list' " :movies="movies" :user="user" />
   </div>
-
 </template>
 
 <script>

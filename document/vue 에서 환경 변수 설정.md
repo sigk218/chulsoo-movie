@@ -245,26 +245,99 @@ page_size 만큼 결과를 받을 수 있다.
 
 ### front-end
 
+[Vue-infinite-scroll](https://github.com/ElemeFE/vue-infinite-scroll) 를 사용.
+
+라이브러리  사용법이 GIthub에 친절하게 나와있다.
 
 
-https://github.com/ElemeFE/vue-infinite-scroll
+
+우선 설치를 해준다.
+
+```shell
+npm install vue-infinite-scroll --save
+```
+
+In `main.js`
+```python
+import infiniteScroll from 'vue-infinite-scroll'
+
+...
+Vue.use(infiniteScroll)
+...
+```
+
+
+
+In `Home.vue > script`
+
+```javascript
+export default {
+  ...
+  data() {
+    return {
+	  ...
+      page: 1,
+      busy: false,
+      ...
+    }
+  },
+  methods:{
+	...
+    loadMore() {
+      this.busy = true
+      console.log(this.page)
+      axios.get(MOVIE_URL+`?page=${this.page}`, this.options)
+      .then(res=>{
+        this.movies= this.movies.concat(res.data.results)
+        this.page++
+        this.busy = false
+        if(res.data.next === null){ 
+          this.busy = true
+        }     
+      })
+    }
+    
+  },
+  computed: {
+    user() {
+      return VueJwtDecode.decode(this.$session.get('jwt'))
+    },
+  },
+  mounted(){
+    this.token = this.$session.get('jwt')
+    this.options = {
+      headers: {
+      Authorization: 'JWT ' + this.token
+      }
+    }    
+  }
+}
+```
+
+
+
+In `Home.vue > html`
+
+```html
+<MovieList v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="100" v-if="display == 'list' " :movies="movies" :user="user" />
+```
+
 
 
 
 고쳐야 할 것 
 
-- [ ] data 크롤링 (최신 정보로, 제목 맞춰서)
+- [ ] data 크롤링 (최신 정보로, 제목 맞춰서), 웹 크롤러 만들기
 - [x] url 바꾸기 
 - [ ] 반응형 
 - [ ] 유투브, 인스타그램 로고 넣기 
 - [ ] admin page 만들기 
-- [ ]  깃 리모트  추가해주기
+- [x]  깃 리모트  추가해주기
 - [ ] git ignore 정리 
 - [x] 헤로쿠 쉘에서 마이그레이션 해주기
-- [ ] 깃랩에 있는 커밋 옮기기 
+- [x] 깃랩에 있는 커밋 옮기기 
 - [ ] http 오류 
-- [ ] 무한 스크롤 로드 
-- [ ] 웹 크롤러 만들기
+- [x] 무한 스크롤 로드 
 
 
 
